@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('zapatos', function (Blueprint $table) {
             $table->id();
             $table->string('description');
-            $table->int('size');
-            $tablle->float('price');
+            $table->integer('size');
+            $table->float('price');
             $table->integer('stock');
             $table->timestamps();
         });
