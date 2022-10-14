@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ZapatoController;
+use App\Http\Controllers\ShoeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/zapatos',[ZapatoController::class, 'index']);
-Route::post('/zapatos',[ZapatoController::class, 'store']);
-Route::put('/zapatos{id}',[ZapatoController::class, 'update']);
-Route::delete('/zapatos{id}',[ZapatoController::class, 'destroy']);
+Route::get('/shoes',[ShoeController::class, 'index']);
+Route::post('/shoes',[ShoeController::class, 'store']);
+Route::put('/shoes{id}',[ShoeController::class, 'update']);
+Route::delete('/shoes{id}',[ShoeController::class, 'destroy']);

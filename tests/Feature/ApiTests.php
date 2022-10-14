@@ -4,29 +4,19 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
+use \tests\Unit\TestCase;
 
-require 'ZapatoController.php';
 
 class ApiTests extends TestCase
 {
 
     public function EntryCorrectFormatDescription()
     {
-        $Shoe = new Zapato();
+        $shoe = "shoeDescription";
+        $description = "shoeDescription";
 
-        if($shoe->description = string)
-        true;
-        else{
-            false;
-        }
+        $this->assertSame($shoe, $description);
     }
 
-    public function ReturnCorrectInfoIndex()
-    {
-        $Shoe1 = Zapato::all();
-        return $Shoe1;
-
-        $Shoe1->assertEqual('description','size','price','stock');
-    }
+    
 }

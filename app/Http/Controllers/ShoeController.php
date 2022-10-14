@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Zapato;
+use App\Models\Shoe;
 
-class ZapatoController extends Controller
+class ShoeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ZapatoController extends Controller
     public function index()
     {
         //Bring data from table
-        $zapato= Zapato::all();
-        return $zapato;
+        $shoe= shoe::all();
+        return $shoe;
     }
 
     /**
@@ -38,13 +38,13 @@ class ZapatoController extends Controller
     public function store(Request $request)
     {
         //Create a new shoe
-        $zapato= new Zapato();
-        $zapato->description=$request->description;
-        $zapato->size=$request->size;
-        $zapato->price=$request->price;
-        $zapato->stock=$request->stock;
+        $shoe= new Shoe();
+        $shoe->description=$request->description;
+        $shoe->size=$request->size;
+        $shoe->price=$request->price;
+        $shoe->stock=$request->stock;
 
-        $zapato->save();
+        $shoe->save();
     }
 
     /**
@@ -79,13 +79,13 @@ class ZapatoController extends Controller
     public function update(Request $request, $id)
     {
         //Update the table
-        $zapato = Zapato::findOrFail($request->id);
-        $zapato->description=$request->description;
-        $zapato->size=$request->size;
-        $zapato->price=$request->price;
-        $zapato->stock=$request->stock;
+        $shoe = Shoe::findOrFail($request->id);
+        $shoe->description=$request->description;
+        $shoe->size=$request->size;
+        $shoe->price=$request->price;
+        $shoe->stock=$request->stock;
 
-        $zapato->save();
+        $shoe->save();
 
     }
 
@@ -98,7 +98,7 @@ class ZapatoController extends Controller
     public function destroy($id)
     {
         //Delete from table
-        $zapato= Zapato::destroy($request->id);
-        return $zapato;
+        $shoe= shoe::destroy($request->id);
+        return $shoe;
     }
 }
